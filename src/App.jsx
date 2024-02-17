@@ -33,6 +33,7 @@ function App() {
 
   return (
     <>
+    <h1>Tour options</h1>
       {tours.map((tour) => {
         const { id, image, info, name, price } = tour;
         return (
