@@ -1,4 +1,6 @@
 import "./App.css";
+import Loading from "./components/Loading";
+import Tour from "./components/Tour";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -27,18 +29,16 @@ function App() {
     fetchData();
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
   return (
     <>
-      {tours.map((tour) => (
-        <div key={tour.id}>
-          <img src={tour.image} alt="" />
-          <h2>{tour.name}</h2>
-          <p>{tour.info}</p>
-          <p>{tour.price}</p>
-        </div>
-      ))}
+      {tours.map((tour) => {
+        const { id, image, info, name, price } = tour;
+        return (
+          <Tour key={id} image={image} info={info} name={name} price={price} />
+        );
+      })}
     </>
   );
 }
