@@ -1,14 +1,19 @@
 const Tour = (props) => {
   return (
-    <div key={props.id} className="p-4 bg-gray-200 flex flex-col justify-between">
+    <div
+      key={props.id}
+      className="bg-gray-200 flex items-center border gap-20 p-2 border-black"
+    >
       <img
+        className="w-44 h-20 object-cover rounded-xl"
         src={props.image}
         alt={props.image}
-        className="w-96 h-60 items-center object-cover rounded-xl"
-      />
+        />
+        <div className=" w-[70%]  ">
       <h2 className="py-4 text-xl font-semibold">{props.name}</h2>
-      <p className="pb-4">{props.info}</p>
+      <p className="pb-4 ">{props.info}</p>
       <p className="text-2xl font-bold">For only {props.price}$</p>
+        </div>
     </div>
   );
 };

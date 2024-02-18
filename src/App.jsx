@@ -1,11 +1,17 @@
 import "./App.css";
 import Loading from "./components/Loading";
 import Tour from "./components/Tour";
+import Heading from "./components/Heading";
+import ClearButton from "./components/ClearButton";
 import { useEffect, useState } from "react";
 
 function App() {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const clearButtonHandler = () => {
+    setTours([]);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,21 +38,13 @@ function App() {
 
   return (
     <>
-        <h1 className="text-5xl py-4">React Tours</h1>
-      <div className="tour-container flex ">
+      <Heading />
+      <div className="tour-container flex flex-col ">
         {tours.map((tour) => {
-          const { id, image, info, name, price } = tour;
-          return (
-            <Tour
-              key={id}
-              image={image}
-              info={info}
-              name={name}
-              price={price}
-            />
-          );
+          return <Tour {...tour} key={tour.id} />;
         })}
       </div>
+      <ClearButton handleClear={clearButtonHandler} />
     </>
   );
 }
