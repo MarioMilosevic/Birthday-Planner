@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <Heading />
-      <div className="tour-container flex flex-col ">
+      <div className="tour-container grid grid-cols-3">
         {tours.map((tour) => {
           return <Tour {...tour} key={tour.id} />;
         })}
