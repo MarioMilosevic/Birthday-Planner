@@ -18,7 +18,6 @@ function App() {
           throw new Error("Network reponse was not ok");
         }
         const data = await response.json();
-        console.log(data);
         setTours(data);
       } catch (error) {
         console.error("Error fetching data", error);
@@ -33,12 +32,21 @@ function App() {
 
   return (
     <>
-      {tours.map((tour) => {
-        const { id, image, info, name, price } = tour;
-        return (
-          <Tour key={id} image={image} info={info} name={name} price={price} />
-        );
-      })}
+        <h1 className="text-5xl py-4">React Tours</h1>
+      <div className="tour-container flex ">
+        {tours.map((tour) => {
+          const { id, image, info, name, price } = tour;
+          return (
+            <Tour
+              key={id}
+              image={image}
+              info={info}
+              name={name}
+              price={price}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }

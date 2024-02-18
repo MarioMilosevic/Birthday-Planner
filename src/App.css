@@ -1,9 +1,9 @@
 #root {
   margin: 0 auto;
   text-align: center;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   font-family: "Poppins", sans-serif;
-  background-color: #e5e7eb;
-  height: 100vh;
+  background-color: #f3f4f6;
+  min-height: 100vh;
 }

@@ -1,6 +1,6 @@
 const Tour = (props) => {
   return (
-    <div key={props.id} className="p-4">
+    <div key={props.id} className="p-4 bg-gray-200 flex flex-col justify-between">
       <img
         src={props.image}
         alt={props.image}
